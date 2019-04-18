@@ -1,8 +1,21 @@
 @extends('layouts.app')
-
-@section('title', '| Edit User')
-
+@section('title', '| 编辑用户')
+@section('headerCss')
+@parent 
+@show
+<!--头部--> 
+@section('header')
+@parent 
+@show
+<!--侧边栏-->
+@section('sidebar')
+@show
+<!--设置导航--> 
+@section('navigation')        
+@parent 
+@show 
 @section('content')
+    @parent
 
 <div class='col-lg-4 col-lg-offset-4'>
 
@@ -50,3 +63,6 @@
 </div>
 
 @endsection
+@section('footerScripts')
+@parent 
+@show

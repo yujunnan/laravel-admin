@@ -1,8 +1,21 @@
 @extends('layouts.app')
-
-@section('title', '| Permissions')
-
+@section('title', '| 权限')
+@section('headerCss')
+@parent 
+@show
+<!--头部--> 
+@section('header')
+@parent 
+@show
+<!--侧边栏-->
+@section('sidebar')
+@show
+<!--设置导航--> 
+@section('navigation')        
+@parent 
+@show 
 @section('content')
+    @parent
 
 <div class="col-lg-10 col-lg-offset-1">
     <h1><i class="fa fa-key"></i>Available Permissions
@@ -40,5 +53,7 @@
     <a href="{{ URL::to('permissions/create') }}" class="btn btn-success">Add Permission</a>
 
 </div>
-
 @endsection
+@section('footerScripts')
+@parent 
+@show

@@ -9,22 +9,26 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    @section('headerCss')
     <!-- Styles -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    @show    
 
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
-    <script src="https://use.fontawesome.com/9712be8772.js"></script>
 </head>
 <body>
     <div id="app">
+        <!--头部--> 
+        @section('header')
+        @show
+
+        <!--侧边栏-->
+        @section('sidebar')
+        @show 
+
+        <!--设置导航--> 
+        @section('navigation')        
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -84,25 +88,48 @@
                 </div>
             </div>
         </nav>
-
-        @if(Session::has('flash_message'))
-            <div class="container">      
-                <div class="alert alert-success"><em> {!! session('flash_message') !!}</em>
+        @show
+        <!--主体-->
+        @section('content')
+            @if(Session::has('flash_message'))
+                <div class="container">      
+                    <div class="alert alert-success"><em> {!! session('flash_message') !!}</em>
+                    </div>
+                </div>
+            @endif 
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">              
+                    @include ('errors.list') {{-- 引入错误文件 --}}
                 </div>
             </div>
-        @endif 
+        @show
+        <!--底部信息-->
+        @section('footer')
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">              
-                @include ('errors.list') {{-- 引入错误文件 --}}
-            </div>
-        </div>
+        @show
+        <!--弹框--> 
+        @section('alert')
 
-        @yield('content')
+        @show
 
+
+
+
+        
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
+<!--引入javascript--> 
+@section('footerScripts')
+<!-- Scripts -->
+<script>
+    window.Laravel = {!! json_encode([
+        'csrfToken' => csrf_token(),
+    ]) !!};
+</script>
+<script src="https://use.fontawesome.com/9712be8772.js"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+@show 

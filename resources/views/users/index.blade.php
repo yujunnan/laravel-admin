@@ -1,8 +1,21 @@
 @extends('layouts.app')
-
-@section('title', '| Users')
-
+@section('title', '| 用户信息')
+@section('headerCss')
+@parent 
+@show
+<!--头部--> 
+@section('header')
+@parent 
+@show
+<!--侧边栏-->
+@section('sidebar')
+@show
+<!--设置导航--> 
+@section('navigation')        
+@parent 
+@show 
 @section('content')
+    @parent
 
 <div class="col-lg-10 col-lg-offset-1">
     <h1><i class="fa fa-users"></i> User Administration <a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
@@ -49,3 +62,6 @@
 </div>
 
 @endsection
+@section('footerScripts')
+@parent 
+@show

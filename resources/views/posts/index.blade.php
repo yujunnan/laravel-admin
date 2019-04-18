@@ -1,11 +1,28 @@
 @extends('layouts.app')
+@section('title', '| 首页')
+@section('headerCss')
+@parent 
+@show
+<!--头部--> 
+@section('header')
+@parent 
+@show
+<!--侧边栏-->
+@section('sidebar')
+@show
+<!--设置导航--> 
+@section('navigation')        
+@parent 
+@show 
 @section('content')
+    @parent
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3>Posts</h3></div>
-                    <div class="panel-heading">Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</div>
+                    <div class="panel-heading">Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}
+                    </div>
                     @foreach ($posts as $post)
                         <div class="panel-body">
                             <li style="list-style-type:disc">
@@ -17,11 +34,14 @@
                             </li>
                         </div>
                     @endforeach
-                    </div>
-                    <div class="text-center">
-                        {!! $posts->links() !!}
-                    </div>
+                </div>
+                <div class="text-center">
+                    {!! $posts->links() !!}
                 </div>
             </div>
         </div>
+    </div>
 @endsection
+@section('footerScripts')
+@parent 
+@show

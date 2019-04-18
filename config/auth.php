@@ -99,5 +99,8 @@ return [
             'expire' => 60,
         ],
     ],
-
+    'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+    ],
 ];

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
-use App\Admin\Controllers\UserController;
+
 Admin::registerAuthRoutes();
 
 Route::group([
@@ -11,5 +11,13 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+    //电影
+    $router->resource('movies', MovieController::class);
+    $router->resource('users', UserController::class);
+    //上传图片
+    $router->post('uploads/postUploadPicture', 
+    	'UploadController@postUploadPicture');
 
 });
+
+
