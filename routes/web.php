@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-
-    return view('welcome');
+	//return redirect('/#/home');
+    //return view('welcome');
 });
 
 Auth::routes();
@@ -36,7 +36,7 @@ Route::get('/auth/implicit/callback', 'Auth\LoginController@implicitCallback');
 //Auth
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 //Post
 Route::get('/', 'PostController@index')->name('home');
@@ -51,3 +51,7 @@ Route::resource('permissions', 'PermissionController');
 //Roles
 Route::resource('roles', 'RoleController');
 
+
+//测试 Vue
+
+Route::get('/vue', 'VueController@index');

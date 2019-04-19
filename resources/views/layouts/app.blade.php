@@ -9,9 +9,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
     @section('headerCss')
     <!-- Styles -->
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     @show    
@@ -19,6 +22,8 @@
 </head>
 <body>
     <div id="app">
+        
+
         <!--头部--> 
         @section('header')
         @show
@@ -51,6 +56,7 @@
                     <!-- 导航条左边 -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('vue') }}/#home">Vue</a></li>
                         @if (!Auth::guest())
                             <li><a href="{{ route('posts.create') }}">New Article</a></li>
                          @endif
@@ -131,5 +137,6 @@
 </script>
 <script src="https://use.fontawesome.com/9712be8772.js"></script>
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+
 @show 
+<script src="{{ asset('js/app.js') }}"></script>
