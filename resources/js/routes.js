@@ -32,14 +32,14 @@ export default new VueRouter({
                     components: Vue.component( 'Home', require( './pages/Home.vue' ) )
                 },
                 {
-                    path: 'cafes',
-                    name: 'cafes',
-                    components: Vue.component( 'Cafes', require( './pages/Cafes.vue' ) ),
+                    path: 'movies',
+                    name: 'movies',
+                    components: Vue.component( 'Vue', require( './pages/Movies.vue' ) ),
                 },
                 {
-                    path: 'cafes/new',
-                    name: 'newcafe',
-                    components: Vue.component( 'NewCafe', require( './pages/NewCafe.vue' ) )
+                    path: 'movie',
+                    name: 'movie',
+                    components: Vue.component( 'NewCafe', require( './pages/Movie.vue' ) )
                 },
                 {
                     path: 'cafes/:id',

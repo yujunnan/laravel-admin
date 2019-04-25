@@ -48,26 +48,41 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', '我的部落') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- 导航条左边 -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{ url('vue') }}/#home">Vue</a></li>
-                        @if (!Auth::guest())
-                            <li><a href="{{ route('posts.create') }}">New Article</a></li>
-                         @endif
+                        <li><a href="{{ url('/') }}">首页</a></li>
+                        <!--<li><a href="{{ url('posts') }}">文章</a></li>-->
+                        <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                   新闻<span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('posts') }}">
+                                            新闻
+                                        </a>
+                                    @if (!Auth::guest())
+                                    <li><a href="{{ route('posts.create') }}">发布新闻</a></li>
+                                    @endif
+                                    </li>
+                                </ul>
+                        </li>                       
+                        <li><a href="{{ url('movies') }}#movies">电影</a></li>
+
                     </ul>
 
                     <!-- 导航条右边 -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- 登录注册链接 -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">登录</a></li>
+                            <li><a href="{{ route('register') }}">注册</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -80,7 +95,7 @@
                                         <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
                                         @endrole
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            Logout
+                                            退出
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -127,6 +142,7 @@
 
 </body>
 </html>
+
 <!--引入javascript--> 
 @section('footerScripts')
 <!-- Scripts -->
@@ -137,6 +153,5 @@
 </script>
 <script src="https://use.fontawesome.com/9712be8772.js"></script>
 <!-- Scripts -->
-
-@show 
 <script src="{{ asset('js/app.js') }}"></script>
+@show 

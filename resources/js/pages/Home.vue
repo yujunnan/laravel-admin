@@ -1,13 +1,15 @@
 <style>
-
+#vue{
+    
+    width:100%;
+    height:300px;
+}
 </style>
 
 <template>
 
-    <div id="home">
-        {{ message }} 点击次数 {{ click_num }}
+    <div id="vue">
 
-        <button type="button" v-on:click="click_me(111)">点击我</button>
 
     </div>
 </template>
@@ -16,15 +18,14 @@
     export default {
         data() {
            return {
-               message: '加载中',
-               click_num:0
+            
            }
         },
         components: {
         },
         //钩子函数
         created() {
-          this.message="加载完成";
+         
 
         },
         /**

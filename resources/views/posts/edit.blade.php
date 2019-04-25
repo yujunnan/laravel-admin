@@ -25,10 +25,22 @@
             <hr>
                 {{ Form::model($post, array('route' => array('posts.update', $post->id), 'method' => 'PUT')) }}
                 <div class="form-group">
-                {{ Form::label('title', 'Title') }}
-                {{ Form::text('title', null, array('class' => 'form-control')) }}<br>
+                {{ Form::label('title', '标题') }}
 
-                {{ Form::label('body', 'Post Body') }}
+
+
+                {{ Form::text('title', null, array('class' => 'form-control')) }}<br>
+                @if(isset($post->image->url))
+                    <img src="{{$post->image->url}}" height="100px">
+               
+                <br/>
+                @endif
+
+                <br/>            
+                <imagesupload-component></imagesupload-component>
+
+
+                {{ Form::label('body', '文章内容') }}
                 {{ Form::textarea('body', null, array('class' => 'form-control')) }}<br>
 
                 {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}

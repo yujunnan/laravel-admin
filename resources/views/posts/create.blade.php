@@ -30,7 +30,7 @@
             {{ Form::label('title', 'Title') }}
             {{ Form::text('title', null, array('class' => 'form-control')) }}
             <br>
-
+                <imagesupload-component></imagesupload-component>
             {{ Form::label('body', 'Post Body') }}
             {{ Form::textarea('body', null, array('class' => 'form-control')) }}
             <br>

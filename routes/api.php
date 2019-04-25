@@ -17,3 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+//上传附件
+Route::post('form/file_upload', 'UploadController@fileUpload');
+//上传图片
+Route::post('form/images_upload', 'UploadController@imagesUpload');
+

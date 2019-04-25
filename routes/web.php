@@ -10,13 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-	//return redirect('/#/home');
-    //return view('welcome');
-});
-
+//Auth
 Auth::routes();
+//验证
+
+Auth::routes(['verify' => true]);
+
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -33,13 +34,15 @@ Route::get('/auth/implicit', 'Auth\LoginController@implicit');
 Route::get('/auth/implicit/callback', 'Auth\LoginController@implicitCallback');
 
 
-//Auth
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Post
-Route::get('/', 'PostController@index')->name('home');
+Route::get('/',function(){
+
+	return view("welcome");
+});
 Route::resource('posts', 'PostController');
 
 //Users
@@ -52,6 +55,13 @@ Route::resource('permissions', 'PermissionController');
 Route::resource('roles', 'RoleController');
 
 
-//测试 Vue
+//电影
+Route::get('movies', 'MovieController@index');
+//获取电影信息
+Route::post('movies/getmovies', 'MovieController@getmovies');
 
-Route::get('/vue', 'VueController@index');
+
+
+Route::get('movies/getmovie', 'MovieController@getmovie');
+
+

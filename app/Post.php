@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-  	protected $fillable = ['title', 'body'];
+  	protected $fillable = ['title', 'body','url'];
 
  	protected $dates = ['published_at'];
     public function setTitleAttribute($value)
@@ -17,6 +17,8 @@ class Post extends Model
             $this->attributes['slug'] = str_slug($value);
         }
     }
-
-    
+    //建立与images一对一多态关联
+    public function image(){
+    	 return $this->morphOne(Image::class, 'imageable');
+    }
 }

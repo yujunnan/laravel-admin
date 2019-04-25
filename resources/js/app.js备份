@@ -33,12 +33,8 @@ require('./bootstrap');
 import Vue from 'vue';
 import router from './routes.js';
 import store from './store.js';
-//默认组件
+//单独注册组件
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-//附件上传组件
-Vue.component('fileupload-component', require('./components/global/FileUploadComponent.vue').default);
-//图片上传组件
-Vue.component('imagesupload-component', require('./components/global/ImagesUploadComponent.vue').default);
 new Vue({
     router,
     store

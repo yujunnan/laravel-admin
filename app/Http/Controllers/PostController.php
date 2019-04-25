@@ -19,8 +19,8 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $posts = Post::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
-
+        $posts = Post::with("image")->orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
+        //dump($posts);
         return view('posts.index', compact('posts'));
     }
 
@@ -49,9 +49,10 @@ class PostController extends Controller {
 
         $title = $request['title'];
         $body = $request['body'];
-
+        $url=$request->input('url');
         $post = Post::create($request->only('title', 'body'));
-
+        $post->image()->create([ //更新
+        'url' =>$url]);
         // 基于保存结果显示成功消息
         return redirect()->route('posts.index')
             ->with('flash_message', 'Article,
@@ -77,8 +78,8 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $post = Post::findOrFail($id);
-
+        $post = Post::with('image')->findOrFail($id);
+        //dump($post);
         return view('posts.edit', compact('post'));
     }
 
@@ -90,15 +91,30 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+        //验证
         $this->validate($request, [
             'title'=>'required|max:100',
             'body'=>'required',
+            'url'=>'required'
+        ],[
+            'title.required'=>'请输入标题',
+            'title.max'=>'标题太长请小于100字符',
+            'body.required'=>'内容必填',
+            'url.required' => '请选择要上传的图片',
+            'url.image' => '只支持上传图片',
+            'url.mimes' => '只支持上传jpg/png/jpeg格式图片',
+            'url.max' => '上传图片超过最大尺寸限制(1M)'
         ]);
-
+        //$imageone = new \App\Image(['url' => $request->input('url')]);
         $post = Post::findOrFail($id);
+       
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
+        //我这么写了
+        $post->image()->delete(); //删除
+        $post->image()->create([ //更新
+        'url' => $request->input('url')]);
 
         return redirect()->route('posts.show',
             $post->id)->with('flash_message',

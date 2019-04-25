@@ -2,10 +2,15 @@
 @section('title', '| 首页')
 @section('headerCss')
 @parent 
+<style type="text/css">
+
+
+
+</style> 
 @show
 <!--头部--> 
 @section('header')
-@parent 
+@parent
 @show
 <!--侧边栏-->
 @section('sidebar')
@@ -24,15 +29,25 @@
                     <div class="panel-heading">Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}
                     </div>
                     @foreach ($posts as $post)
-                        <div class="panel-body">
-                            <li style="list-style-type:disc">
-                                <a href="{{ route('posts.show', $post->id ) }}"><b>{{ $post->title }}</b><br>
-                                    <p class="teaser">
-                                       {{  str_limit($post->body, 100) }} {{-- Limit teaser to 100 characters --}}
-                                    </p>
-                                </a>
-                            </li>
+                    <!---->
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            @if(isset($post->image->url))
+                                <img src="{{$post->image->url}}" width="100%" >
+                            @endif
+                            @if(!$post->image)
+                                <img src="/storage/images/75df72ed1747208c8130af6c12d8ea84.jpg" width="100%" >
+                            @endif
                         </div>
+                        <div class="col-md-10">
+                            <a href="{{ route('posts.show', $post->id ) }}">
+                            {{$post->title}}
+                            </a>
+                            <p>
+                            {{str_limit($post->body,300,'...')}}
+                            </p>                
+                        </div>
+                    </div>
                     @endforeach
                 </div>
                 <div class="text-center">
