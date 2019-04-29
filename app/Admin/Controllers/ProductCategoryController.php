@@ -2,15 +2,15 @@
 
 namespace App\Admin\Controllers;
 
-use App\Product;
+use App\ProductCategory;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-
-class ProductController extends Controller
+use Overtrue\Pinyin\Pinyin;
+class ProductCategoryController extends Controller
 {
     use HasResourceActions;
 
@@ -23,10 +23,9 @@ class ProductController extends Controller
     public function index(Content $content)
     {
 
-
         return $content
-            ->header('列表')
-            ->description('产品信息')
+            ->header('产品分类信息')
+            ->description('在这里管理你的产品')
             ->body($this->grid());
     }
 
@@ -40,10 +39,8 @@ class ProductController extends Controller
     public function show($id, Content $content)
     {
         return $content
-
-            ->header('详情')
-            ->description('产品信息')
-
+            ->header('查看')
+            ->description('产品分类')
             ->body($this->detail($id));
     }
 
@@ -57,10 +54,8 @@ class ProductController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-
             ->header('修改')
-            ->description('产品信息')
-
+            ->description('产品分类')
             ->body($this->form()->edit($id));
     }
 
@@ -75,8 +70,7 @@ class ProductController extends Controller
 
         return $content
             ->header('创建')
-
-            ->description('产品信息')
+            ->description('产品分类')
             ->body($this->form());
     }
 
@@ -87,15 +81,19 @@ class ProductController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Product);
+        $grid = new Grid(new ProductCategory);
 
         $grid->id('Id');
+        $grid->name('类别名称');
+        $grid->status('状态')->display(function($status){
+            if($status==0){
+                return $status="<span style='color:red'>禁用</span>";
+            }
+            if($status==1){
+                return $status="<span style='color:green'>启用</span>";
+            }
 
-        $grid->name('名称');
-        $grid->price('价格');
-        $grid->thumbnail('缩略图');
-        $grid->number('产品编号');
-        $grid->status('状态')->options([0 => '禁用', 1=> '启用'])->default(1);
+        });
         $grid->created_at('创建时间');
         $grid->updated_at('修改时间');
 
@@ -111,10 +109,17 @@ class ProductController extends Controller
     protected function detail($id)
     {
 
-        $show = new Show(Product::findOrFail($id));
+        $show = new Show(ProductCategory::findOrFail($id));
+        $show->name('类别名称');
+        $show->status('状态')->as(function($status){
+            if($status==0){
+                return $status="禁用";
+            }
+            if($status==1){
+                return $status="启用";
+            }
 
-        $show->id('Id');
-        $show->name('电影名');
+        });
         $show->created_at('创建时间');
         $show->updated_at('修改时间');
 
@@ -129,11 +134,18 @@ class ProductController extends Controller
     protected function form()
     {
 
+        
 
+        $form = new Form(new ProductCategory);
+       
 
-        $form = new Form(new Product);
-        $form->text('name', '电影名');
-        $form->editor('content','内容');
+        $form->text('name', '类别名称')->rules('required', [
+            'required' => '类型名称'
+        ]);
+        $form->radio('status', '状态')->options([0 => '禁用', 1=> '启用'])->default(1);  
+        $form->number('sort', '排序')->default(0)->max(1000)->min(0);
+
+        
         return $form;
     }
 }
