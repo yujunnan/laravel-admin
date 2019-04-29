@@ -13,7 +13,9 @@ Route::group([
     $router->get('/', 'HomeController@index');
     //电影
     $router->resource('movies', MovieController::class);
-    $router->resource('users', UserController::class);
+    //用户
+    $router->resource('movies', MovieController::class);    
+    $router->resource('products', ProductController::class);
     //上传图片
     $router->post('uploads/postUploadPicture', 
     	'UploadController@postUploadPicture');
