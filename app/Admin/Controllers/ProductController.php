@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Admin\Controllers;
-
+use App\ProductCategory;
 use App\Product;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
@@ -9,7 +9,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-
+use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     use HasResourceActions;
@@ -70,14 +70,24 @@ class ProductController extends Controller
      * @param Content $content
      * @return Content
      */
-    public function create(Content $content)
+    public function create(Content $content,Request $request)
     {
-
+        //获取产品类别
+        $form = new Form(new Product);
         return $content
             ->header('创建')
-
-            ->description('产品信息')
-            ->body($this->form());
+            ->description('产品')
+            ->body(view('admin.products.create', 
+            [
+                'name' => $form->text('name', '电影名'),
+                'price' =>$form->number('price','价格(元)')->max(10000)->min(50)->default(50),
+                'thumbnail' =>$form->image('thumbnail','缩略图'),
+                'content'=> $form->editor('content','内容'),
+                'sort'=> $form->number('sort','排序')->max(1000)->min(0)->default(0),
+                'status'=> $form->checkbox('status','状态')->options([0 => '禁用', 1=> '启用'])->default(1),
+                'product_category_id'=>$form->select('product_category_id','类别')->options(ProductCategory::product_categorys_options())
+                
+            ])->render());
     }
 
     /**
@@ -131,9 +141,7 @@ class ProductController extends Controller
 
 
 
-        $form = new Form(new Product);
-        $form->text('name', '电影名');
-        $form->editor('content','内容');
+        
         return $form;
     }
 }
