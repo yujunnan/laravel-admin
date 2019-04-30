@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 29/04/2019 18:14:53
+ Date: 30/04/2019 16:44:30
 */
 
 SET NAMES utf8mb4;
@@ -47,7 +47,7 @@ CREATE TABLE `admin_menu`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -87,7 +87,7 @@ CREATE TABLE `admin_operation_log`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1374 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1619 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -1465,6 +1465,251 @@ INSERT INTO `admin_operation_log` VALUES (1370, 1, 'admin/product_categorys/1', 
 INSERT INTO `admin_operation_log` VALUES (1371, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-29 18:17:22', '2019-04-29 18:17:22');
 INSERT INTO `admin_operation_log` VALUES (1372, 1, 'admin/product_categorys/1', 'PUT', '192.168.10.1', '{\"name\":\"\\u4f60\\u597d\\u4f60\",\"status\":\"1\",\"sort\":\"1\",\"_token\":\"dK27beQAuRsNo14Ty04Q9sOipSsycUAYfdGFUOnk\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/hongyige.test\\/admin\\/product_categorys\\/1\"}', '2019-04-29 18:17:27', '2019-04-29 18:17:27');
 INSERT INTO `admin_operation_log` VALUES (1373, 1, 'admin/product_categorys/1', 'GET', '192.168.10.1', '[]', '2019-04-29 18:17:28', '2019-04-29 18:17:28');
+INSERT INTO `admin_operation_log` VALUES (1374, 1, 'admin', 'GET', '192.168.10.1', '[]', '2019-04-30 09:58:10', '2019-04-30 09:58:10');
+INSERT INTO `admin_operation_log` VALUES (1375, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 09:58:16', '2019-04-30 09:58:16');
+INSERT INTO `admin_operation_log` VALUES (1376, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 09:58:19', '2019-04-30 09:58:19');
+INSERT INTO `admin_operation_log` VALUES (1377, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 09:58:24', '2019-04-30 09:58:24');
+INSERT INTO `admin_operation_log` VALUES (1378, 1, 'admin/product_categorys/1', 'PUT', '192.168.10.1', '{\"name\":\"\\u4f60\\u597d\\u4f6011\",\"status\":\"1\",\"sort\":\"1\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/hongyige.test\\/admin\\/product_categorys\"}', '2019-04-30 09:58:27', '2019-04-30 09:58:27');
+INSERT INTO `admin_operation_log` VALUES (1379, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '[]', '2019-04-30 09:58:28', '2019-04-30 09:58:28');
+INSERT INTO `admin_operation_log` VALUES (1380, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:08:47', '2019-04-30 10:08:47');
+INSERT INTO `admin_operation_log` VALUES (1381, 1, 'admin/product_categorys/1', 'PUT', '192.168.10.1', '{\"name\":\"\\u4f60\\u662f\\u8c01\",\"status\":\"1\",\"sort\":\"1\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/hongyige.test\\/admin\\/product_categorys\"}', '2019-04-30 10:08:57', '2019-04-30 10:08:57');
+INSERT INTO `admin_operation_log` VALUES (1382, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '[]', '2019-04-30 10:08:57', '2019-04-30 10:08:57');
+INSERT INTO `admin_operation_log` VALUES (1383, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:10:07', '2019-04-30 10:10:07');
+INSERT INTO `admin_operation_log` VALUES (1384, 1, 'admin/product_categorys/1', 'PUT', '192.168.10.1', '{\"name\":\"\\u517b\\u751f\\u98df\\u6750\",\"status\":\"1\",\"sort\":\"1\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/hongyige.test\\/admin\\/product_categorys\"}', '2019-04-30 10:10:17', '2019-04-30 10:10:17');
+INSERT INTO `admin_operation_log` VALUES (1385, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '[]', '2019-04-30 10:10:18', '2019-04-30 10:10:18');
+INSERT INTO `admin_operation_log` VALUES (1386, 1, 'admin/product_categorys/4/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:17:45', '2019-04-30 10:17:45');
+INSERT INTO `admin_operation_log` VALUES (1387, 1, 'admin/product_categorys/4', 'PUT', '192.168.10.1', '{\"name\":\"\\u5065\\u8eab\\u5668\\u6750\",\"status\":\"1\",\"sort\":\"0\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/hongyige.test\\/admin\\/product_categorys\"}', '2019-04-30 10:17:47', '2019-04-30 10:17:47');
+INSERT INTO `admin_operation_log` VALUES (1388, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '[]', '2019-04-30 10:17:48', '2019-04-30 10:17:48');
+INSERT INTO `admin_operation_log` VALUES (1389, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '[]', '2019-04-30 10:17:56', '2019-04-30 10:17:56');
+INSERT INTO `admin_operation_log` VALUES (1390, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:18:00', '2019-04-30 10:18:00');
+INSERT INTO `admin_operation_log` VALUES (1391, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:18:02', '2019-04-30 10:18:02');
+INSERT INTO `admin_operation_log` VALUES (1392, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:18:05', '2019-04-30 10:18:05');
+INSERT INTO `admin_operation_log` VALUES (1393, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:18:07', '2019-04-30 10:18:07');
+INSERT INTO `admin_operation_log` VALUES (1394, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:18:09', '2019-04-30 10:18:09');
+INSERT INTO `admin_operation_log` VALUES (1395, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:18:53', '2019-04-30 10:18:53');
+INSERT INTO `admin_operation_log` VALUES (1396, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:18:58', '2019-04-30 10:18:58');
+INSERT INTO `admin_operation_log` VALUES (1397, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:19:00', '2019-04-30 10:19:00');
+INSERT INTO `admin_operation_log` VALUES (1398, 1, 'admin/products', 'GET', '192.168.10.1', '[]', '2019-04-30 10:26:22', '2019-04-30 10:26:22');
+INSERT INTO `admin_operation_log` VALUES (1399, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:27', '2019-04-30 10:26:27');
+INSERT INTO `admin_operation_log` VALUES (1400, 1, 'admin/product_categorys/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:30', '2019-04-30 10:26:30');
+INSERT INTO `admin_operation_log` VALUES (1401, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:33', '2019-04-30 10:26:33');
+INSERT INTO `admin_operation_log` VALUES (1402, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:35', '2019-04-30 10:26:35');
+INSERT INTO `admin_operation_log` VALUES (1403, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:38', '2019-04-30 10:26:38');
+INSERT INTO `admin_operation_log` VALUES (1404, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:40', '2019-04-30 10:26:40');
+INSERT INTO `admin_operation_log` VALUES (1405, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:42', '2019-04-30 10:26:42');
+INSERT INTO `admin_operation_log` VALUES (1406, 1, 'admin/product_categorys/4/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:56', '2019-04-30 10:26:56');
+INSERT INTO `admin_operation_log` VALUES (1407, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:26:58', '2019-04-30 10:26:58');
+INSERT INTO `admin_operation_log` VALUES (1408, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:27:01', '2019-04-30 10:27:01');
+INSERT INTO `admin_operation_log` VALUES (1409, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:27:03', '2019-04-30 10:27:03');
+INSERT INTO `admin_operation_log` VALUES (1410, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:27:36', '2019-04-30 10:27:36');
+INSERT INTO `admin_operation_log` VALUES (1411, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:28:04', '2019-04-30 10:28:04');
+INSERT INTO `admin_operation_log` VALUES (1412, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:28:15', '2019-04-30 10:28:15');
+INSERT INTO `admin_operation_log` VALUES (1413, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:28:25', '2019-04-30 10:28:25');
+INSERT INTO `admin_operation_log` VALUES (1414, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:32:50', '2019-04-30 10:32:50');
+INSERT INTO `admin_operation_log` VALUES (1415, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:33:22', '2019-04-30 10:33:22');
+INSERT INTO `admin_operation_log` VALUES (1416, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:33:47', '2019-04-30 10:33:47');
+INSERT INTO `admin_operation_log` VALUES (1417, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:34:49', '2019-04-30 10:34:49');
+INSERT INTO `admin_operation_log` VALUES (1418, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e11\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:34:52', '2019-04-30 10:34:52');
+INSERT INTO `admin_operation_log` VALUES (1419, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:34:55', '2019-04-30 10:34:55');
+INSERT INTO `admin_operation_log` VALUES (1420, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:35:07', '2019-04-30 10:35:07');
+INSERT INTO `admin_operation_log` VALUES (1421, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:35:34', '2019-04-30 10:35:34');
+INSERT INTO `admin_operation_log` VALUES (1422, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:35:39', '2019-04-30 10:35:39');
+INSERT INTO `admin_operation_log` VALUES (1423, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:36:05', '2019-04-30 10:36:05');
+INSERT INTO `admin_operation_log` VALUES (1424, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:36:10', '2019-04-30 10:36:10');
+INSERT INTO `admin_operation_log` VALUES (1425, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:36:12', '2019-04-30 10:36:12');
+INSERT INTO `admin_operation_log` VALUES (1426, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:37:40', '2019-04-30 10:37:40');
+INSERT INTO `admin_operation_log` VALUES (1427, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"name\":\"\\u521d\\u59cb\\u5316\\u6570\\u636e\",\"_token\":\"SwEmx0ih4qabNIgxmzSgUivxzaXfcLsaysjzC3rb\"}', '2019-04-30 10:42:44', '2019-04-30 10:42:44');
+INSERT INTO `admin_operation_log` VALUES (1428, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:42:46', '2019-04-30 10:42:46');
+INSERT INTO `admin_operation_log` VALUES (1429, 1, 'admin/product_categorys/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:42:49', '2019-04-30 10:42:49');
+INSERT INTO `admin_operation_log` VALUES (1430, 1, 'admin/product_categorys/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:44:27', '2019-04-30 10:44:27');
+INSERT INTO `admin_operation_log` VALUES (1431, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:44:33', '2019-04-30 10:44:33');
+INSERT INTO `admin_operation_log` VALUES (1432, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:44:38', '2019-04-30 10:44:38');
+INSERT INTO `admin_operation_log` VALUES (1433, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 10:44:40', '2019-04-30 10:44:40');
+INSERT INTO `admin_operation_log` VALUES (1434, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:46:56', '2019-04-30 10:46:56');
+INSERT INTO `admin_operation_log` VALUES (1435, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 10:59:28', '2019-04-30 10:59:28');
+INSERT INTO `admin_operation_log` VALUES (1436, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:04:14', '2019-04-30 11:04:14');
+INSERT INTO `admin_operation_log` VALUES (1437, 1, 'admin', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:04:23', '2019-04-30 11:04:23');
+INSERT INTO `admin_operation_log` VALUES (1438, 1, 'admin/auth/users', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:04:32', '2019-04-30 11:04:32');
+INSERT INTO `admin_operation_log` VALUES (1439, 1, 'admin/auth/users/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:04:35', '2019-04-30 11:04:35');
+INSERT INTO `admin_operation_log` VALUES (1440, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:13:53', '2019-04-30 11:13:53');
+INSERT INTO `admin_operation_log` VALUES (1441, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:13:57', '2019-04-30 11:13:57');
+INSERT INTO `admin_operation_log` VALUES (1442, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:14:00', '2019-04-30 11:14:00');
+INSERT INTO `admin_operation_log` VALUES (1443, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:14:03', '2019-04-30 11:14:03');
+INSERT INTO `admin_operation_log` VALUES (1444, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:14:06', '2019-04-30 11:14:06');
+INSERT INTO `admin_operation_log` VALUES (1445, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:20:18', '2019-04-30 11:20:18');
+INSERT INTO `admin_operation_log` VALUES (1446, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:23:16', '2019-04-30 11:23:16');
+INSERT INTO `admin_operation_log` VALUES (1447, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:23:41', '2019-04-30 11:23:41');
+INSERT INTO `admin_operation_log` VALUES (1448, 1, 'admin', 'GET', '192.168.10.1', '[]', '2019-04-30 11:32:49', '2019-04-30 11:32:49');
+INSERT INTO `admin_operation_log` VALUES (1449, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:32:54', '2019-04-30 11:32:54');
+INSERT INTO `admin_operation_log` VALUES (1450, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:32:57', '2019-04-30 11:32:57');
+INSERT INTO `admin_operation_log` VALUES (1451, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 11:33:00', '2019-04-30 11:33:00');
+INSERT INTO `admin_operation_log` VALUES (1452, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:33:42', '2019-04-30 11:33:42');
+INSERT INTO `admin_operation_log` VALUES (1453, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:34:10', '2019-04-30 11:34:10');
+INSERT INTO `admin_operation_log` VALUES (1454, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:34:25', '2019-04-30 11:34:25');
+INSERT INTO `admin_operation_log` VALUES (1455, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:34:42', '2019-04-30 11:34:42');
+INSERT INTO `admin_operation_log` VALUES (1456, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:36:24', '2019-04-30 11:36:24');
+INSERT INTO `admin_operation_log` VALUES (1457, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:36:29', '2019-04-30 11:36:29');
+INSERT INTO `admin_operation_log` VALUES (1458, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:37:15', '2019-04-30 11:37:15');
+INSERT INTO `admin_operation_log` VALUES (1459, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:37:17', '2019-04-30 11:37:17');
+INSERT INTO `admin_operation_log` VALUES (1460, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:37:18', '2019-04-30 11:37:18');
+INSERT INTO `admin_operation_log` VALUES (1461, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:38:35', '2019-04-30 11:38:35');
+INSERT INTO `admin_operation_log` VALUES (1462, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:38:53', '2019-04-30 11:38:53');
+INSERT INTO `admin_operation_log` VALUES (1463, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:39:14', '2019-04-30 11:39:14');
+INSERT INTO `admin_operation_log` VALUES (1464, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:39:24', '2019-04-30 11:39:24');
+INSERT INTO `admin_operation_log` VALUES (1465, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:42:00', '2019-04-30 11:42:00');
+INSERT INTO `admin_operation_log` VALUES (1466, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:42:19', '2019-04-30 11:42:19');
+INSERT INTO `admin_operation_log` VALUES (1467, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:43:00', '2019-04-30 11:43:00');
+INSERT INTO `admin_operation_log` VALUES (1468, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:43:17', '2019-04-30 11:43:17');
+INSERT INTO `admin_operation_log` VALUES (1469, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:44:04', '2019-04-30 11:44:04');
+INSERT INTO `admin_operation_log` VALUES (1470, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:44:52', '2019-04-30 11:44:52');
+INSERT INTO `admin_operation_log` VALUES (1471, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:45:00', '2019-04-30 11:45:00');
+INSERT INTO `admin_operation_log` VALUES (1472, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:45:19', '2019-04-30 11:45:19');
+INSERT INTO `admin_operation_log` VALUES (1473, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:45:40', '2019-04-30 11:45:40');
+INSERT INTO `admin_operation_log` VALUES (1474, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:45:42', '2019-04-30 11:45:42');
+INSERT INTO `admin_operation_log` VALUES (1475, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:46:02', '2019-04-30 11:46:02');
+INSERT INTO `admin_operation_log` VALUES (1476, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:46:35', '2019-04-30 11:46:35');
+INSERT INTO `admin_operation_log` VALUES (1477, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:46:53', '2019-04-30 11:46:53');
+INSERT INTO `admin_operation_log` VALUES (1478, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:48:07', '2019-04-30 11:48:07');
+INSERT INTO `admin_operation_log` VALUES (1479, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:48:19', '2019-04-30 11:48:19');
+INSERT INTO `admin_operation_log` VALUES (1480, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:48:34', '2019-04-30 11:48:34');
+INSERT INTO `admin_operation_log` VALUES (1481, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:49:00', '2019-04-30 11:49:00');
+INSERT INTO `admin_operation_log` VALUES (1482, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:49:03', '2019-04-30 11:49:03');
+INSERT INTO `admin_operation_log` VALUES (1483, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:49:12', '2019-04-30 11:49:12');
+INSERT INTO `admin_operation_log` VALUES (1484, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:49:25', '2019-04-30 11:49:25');
+INSERT INTO `admin_operation_log` VALUES (1485, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:49:37', '2019-04-30 11:49:37');
+INSERT INTO `admin_operation_log` VALUES (1486, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:49:44', '2019-04-30 11:49:44');
+INSERT INTO `admin_operation_log` VALUES (1487, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:50:14', '2019-04-30 11:50:14');
+INSERT INTO `admin_operation_log` VALUES (1488, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:52:25', '2019-04-30 11:52:25');
+INSERT INTO `admin_operation_log` VALUES (1489, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:52:27', '2019-04-30 11:52:27');
+INSERT INTO `admin_operation_log` VALUES (1490, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:53:04', '2019-04-30 11:53:04');
+INSERT INTO `admin_operation_log` VALUES (1491, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:53:26', '2019-04-30 11:53:26');
+INSERT INTO `admin_operation_log` VALUES (1492, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:53:48', '2019-04-30 11:53:48');
+INSERT INTO `admin_operation_log` VALUES (1493, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:54:32', '2019-04-30 11:54:32');
+INSERT INTO `admin_operation_log` VALUES (1494, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:56:17', '2019-04-30 11:56:17');
+INSERT INTO `admin_operation_log` VALUES (1495, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:56:42', '2019-04-30 11:56:42');
+INSERT INTO `admin_operation_log` VALUES (1496, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:57:25', '2019-04-30 11:57:25');
+INSERT INTO `admin_operation_log` VALUES (1497, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:57:28', '2019-04-30 11:57:28');
+INSERT INTO `admin_operation_log` VALUES (1498, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:57:39', '2019-04-30 11:57:39');
+INSERT INTO `admin_operation_log` VALUES (1499, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 11:59:04', '2019-04-30 11:59:04');
+INSERT INTO `admin_operation_log` VALUES (1500, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:01:54', '2019-04-30 12:01:54');
+INSERT INTO `admin_operation_log` VALUES (1501, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:02:15', '2019-04-30 12:02:15');
+INSERT INTO `admin_operation_log` VALUES (1502, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:02:35', '2019-04-30 12:02:35');
+INSERT INTO `admin_operation_log` VALUES (1503, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:05:45', '2019-04-30 12:05:45');
+INSERT INTO `admin_operation_log` VALUES (1504, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:06:04', '2019-04-30 12:06:04');
+INSERT INTO `admin_operation_log` VALUES (1505, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:06:07', '2019-04-30 12:06:07');
+INSERT INTO `admin_operation_log` VALUES (1506, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:06:39', '2019-04-30 12:06:39');
+INSERT INTO `admin_operation_log` VALUES (1507, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:07:37', '2019-04-30 12:07:37');
+INSERT INTO `admin_operation_log` VALUES (1508, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:08:27', '2019-04-30 12:08:27');
+INSERT INTO `admin_operation_log` VALUES (1509, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 12:08:50', '2019-04-30 12:08:50');
+INSERT INTO `admin_operation_log` VALUES (1510, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:41:41', '2019-04-30 13:41:41');
+INSERT INTO `admin_operation_log` VALUES (1511, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:42:03', '2019-04-30 13:42:03');
+INSERT INTO `admin_operation_log` VALUES (1512, 1, 'admin/users', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:16', '2019-04-30 13:42:16');
+INSERT INTO `admin_operation_log` VALUES (1513, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:23', '2019-04-30 13:42:23');
+INSERT INTO `admin_operation_log` VALUES (1514, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:27', '2019-04-30 13:42:27');
+INSERT INTO `admin_operation_log` VALUES (1515, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:28', '2019-04-30 13:42:28');
+INSERT INTO `admin_operation_log` VALUES (1516, 1, 'admin/product_categorys/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:32', '2019-04-30 13:42:32');
+INSERT INTO `admin_operation_log` VALUES (1517, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:34', '2019-04-30 13:42:34');
+INSERT INTO `admin_operation_log` VALUES (1518, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:44', '2019-04-30 13:42:44');
+INSERT INTO `admin_operation_log` VALUES (1519, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:42:45', '2019-04-30 13:42:45');
+INSERT INTO `admin_operation_log` VALUES (1520, 1, 'admin/users', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:43:00', '2019-04-30 13:43:00');
+INSERT INTO `admin_operation_log` VALUES (1521, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:43:02', '2019-04-30 13:43:02');
+INSERT INTO `admin_operation_log` VALUES (1522, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:43:08', '2019-04-30 13:43:08');
+INSERT INTO `admin_operation_log` VALUES (1523, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 13:43:09', '2019-04-30 13:43:09');
+INSERT INTO `admin_operation_log` VALUES (1524, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:44:14', '2019-04-30 13:44:14');
+INSERT INTO `admin_operation_log` VALUES (1525, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:44:36', '2019-04-30 13:44:36');
+INSERT INTO `admin_operation_log` VALUES (1526, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:45:06', '2019-04-30 13:45:06');
+INSERT INTO `admin_operation_log` VALUES (1527, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:45:12', '2019-04-30 13:45:12');
+INSERT INTO `admin_operation_log` VALUES (1528, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:45:46', '2019-04-30 13:45:46');
+INSERT INTO `admin_operation_log` VALUES (1529, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:47:51', '2019-04-30 13:47:51');
+INSERT INTO `admin_operation_log` VALUES (1530, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:48:53', '2019-04-30 13:48:53');
+INSERT INTO `admin_operation_log` VALUES (1531, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:49:35', '2019-04-30 13:49:35');
+INSERT INTO `admin_operation_log` VALUES (1532, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:49:54', '2019-04-30 13:49:54');
+INSERT INTO `admin_operation_log` VALUES (1533, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:50:15', '2019-04-30 13:50:15');
+INSERT INTO `admin_operation_log` VALUES (1534, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:51:46', '2019-04-30 13:51:46');
+INSERT INTO `admin_operation_log` VALUES (1535, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:52:07', '2019-04-30 13:52:07');
+INSERT INTO `admin_operation_log` VALUES (1536, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 13:52:35', '2019-04-30 13:52:35');
+INSERT INTO `admin_operation_log` VALUES (1537, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:09:08', '2019-04-30 14:09:08');
+INSERT INTO `admin_operation_log` VALUES (1538, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:09:23', '2019-04-30 14:09:23');
+INSERT INTO `admin_operation_log` VALUES (1539, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:10:34', '2019-04-30 14:10:34');
+INSERT INTO `admin_operation_log` VALUES (1540, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:11:45', '2019-04-30 14:11:45');
+INSERT INTO `admin_operation_log` VALUES (1541, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:11:58', '2019-04-30 14:11:58');
+INSERT INTO `admin_operation_log` VALUES (1542, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:13:49', '2019-04-30 14:13:49');
+INSERT INTO `admin_operation_log` VALUES (1543, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:13:57', '2019-04-30 14:13:57');
+INSERT INTO `admin_operation_log` VALUES (1544, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:17:14', '2019-04-30 14:17:14');
+INSERT INTO `admin_operation_log` VALUES (1545, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:17:44', '2019-04-30 14:17:44');
+INSERT INTO `admin_operation_log` VALUES (1546, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:18:09', '2019-04-30 14:18:09');
+INSERT INTO `admin_operation_log` VALUES (1547, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:22:43', '2019-04-30 14:22:43');
+INSERT INTO `admin_operation_log` VALUES (1548, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:23:11', '2019-04-30 14:23:11');
+INSERT INTO `admin_operation_log` VALUES (1549, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:23:53', '2019-04-30 14:23:53');
+INSERT INTO `admin_operation_log` VALUES (1550, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:24:05', '2019-04-30 14:24:05');
+INSERT INTO `admin_operation_log` VALUES (1551, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:25:15', '2019-04-30 14:25:15');
+INSERT INTO `admin_operation_log` VALUES (1552, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:27:06', '2019-04-30 14:27:06');
+INSERT INTO `admin_operation_log` VALUES (1553, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:27:31', '2019-04-30 14:27:31');
+INSERT INTO `admin_operation_log` VALUES (1554, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:28:01', '2019-04-30 14:28:01');
+INSERT INTO `admin_operation_log` VALUES (1555, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:29:25', '2019-04-30 14:29:25');
+INSERT INTO `admin_operation_log` VALUES (1556, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:30:44', '2019-04-30 14:30:44');
+INSERT INTO `admin_operation_log` VALUES (1557, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:33:16', '2019-04-30 14:33:16');
+INSERT INTO `admin_operation_log` VALUES (1558, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:34:36', '2019-04-30 14:34:36');
+INSERT INTO `admin_operation_log` VALUES (1559, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:37:40', '2019-04-30 14:37:40');
+INSERT INTO `admin_operation_log` VALUES (1560, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:38:11', '2019-04-30 14:38:11');
+INSERT INTO `admin_operation_log` VALUES (1561, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 14:53:06', '2019-04-30 14:53:06');
+INSERT INTO `admin_operation_log` VALUES (1562, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:06:38', '2019-04-30 15:06:38');
+INSERT INTO `admin_operation_log` VALUES (1563, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:06:43', '2019-04-30 15:06:43');
+INSERT INTO `admin_operation_log` VALUES (1564, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:11:41', '2019-04-30 15:11:41');
+INSERT INTO `admin_operation_log` VALUES (1565, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:19:40', '2019-04-30 15:19:40');
+INSERT INTO `admin_operation_log` VALUES (1566, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:19:51', '2019-04-30 15:19:51');
+INSERT INTO `admin_operation_log` VALUES (1567, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:20:35', '2019-04-30 15:20:35');
+INSERT INTO `admin_operation_log` VALUES (1568, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:20:56', '2019-04-30 15:20:56');
+INSERT INTO `admin_operation_log` VALUES (1569, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:25:40', '2019-04-30 15:25:40');
+INSERT INTO `admin_operation_log` VALUES (1570, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:26:24', '2019-04-30 15:26:24');
+INSERT INTO `admin_operation_log` VALUES (1571, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:26:48', '2019-04-30 15:26:48');
+INSERT INTO `admin_operation_log` VALUES (1572, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:27:12', '2019-04-30 15:27:12');
+INSERT INTO `admin_operation_log` VALUES (1573, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:28:48', '2019-04-30 15:28:48');
+INSERT INTO `admin_operation_log` VALUES (1574, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:29:09', '2019-04-30 15:29:09');
+INSERT INTO `admin_operation_log` VALUES (1575, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:29:21', '2019-04-30 15:29:21');
+INSERT INTO `admin_operation_log` VALUES (1576, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:29:57', '2019-04-30 15:29:57');
+INSERT INTO `admin_operation_log` VALUES (1577, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:30:10', '2019-04-30 15:30:10');
+INSERT INTO `admin_operation_log` VALUES (1578, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:30:56', '2019-04-30 15:30:56');
+INSERT INTO `admin_operation_log` VALUES (1579, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:31:35', '2019-04-30 15:31:35');
+INSERT INTO `admin_operation_log` VALUES (1580, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:32:05', '2019-04-30 15:32:05');
+INSERT INTO `admin_operation_log` VALUES (1581, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:32:23', '2019-04-30 15:32:23');
+INSERT INTO `admin_operation_log` VALUES (1582, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:32:40', '2019-04-30 15:32:40');
+INSERT INTO `admin_operation_log` VALUES (1583, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:33:12', '2019-04-30 15:33:12');
+INSERT INTO `admin_operation_log` VALUES (1584, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:34:02', '2019-04-30 15:34:02');
+INSERT INTO `admin_operation_log` VALUES (1585, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:34:14', '2019-04-30 15:34:14');
+INSERT INTO `admin_operation_log` VALUES (1586, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:34:43', '2019-04-30 15:34:43');
+INSERT INTO `admin_operation_log` VALUES (1587, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:35:30', '2019-04-30 15:35:30');
+INSERT INTO `admin_operation_log` VALUES (1588, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:35:59', '2019-04-30 15:35:59');
+INSERT INTO `admin_operation_log` VALUES (1589, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:36:35', '2019-04-30 15:36:35');
+INSERT INTO `admin_operation_log` VALUES (1590, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:36:49', '2019-04-30 15:36:49');
+INSERT INTO `admin_operation_log` VALUES (1591, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:37:07', '2019-04-30 15:37:07');
+INSERT INTO `admin_operation_log` VALUES (1592, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:37:17', '2019-04-30 15:37:17');
+INSERT INTO `admin_operation_log` VALUES (1593, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:42:30', '2019-04-30 15:42:30');
+INSERT INTO `admin_operation_log` VALUES (1594, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:42:45', '2019-04-30 15:42:45');
+INSERT INTO `admin_operation_log` VALUES (1595, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:43:21', '2019-04-30 15:43:21');
+INSERT INTO `admin_operation_log` VALUES (1596, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:43:31', '2019-04-30 15:43:31');
+INSERT INTO `admin_operation_log` VALUES (1597, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:45:08', '2019-04-30 15:45:08');
+INSERT INTO `admin_operation_log` VALUES (1598, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:45:25', '2019-04-30 15:45:25');
+INSERT INTO `admin_operation_log` VALUES (1599, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:46:08', '2019-04-30 15:46:08');
+INSERT INTO `admin_operation_log` VALUES (1600, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:47:25', '2019-04-30 15:47:25');
+INSERT INTO `admin_operation_log` VALUES (1601, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:47:59', '2019-04-30 15:47:59');
+INSERT INTO `admin_operation_log` VALUES (1602, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 15:48:17', '2019-04-30 15:48:17');
+INSERT INTO `admin_operation_log` VALUES (1603, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 15:48:19', '2019-04-30 15:48:19');
+INSERT INTO `admin_operation_log` VALUES (1604, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 15:48:20', '2019-04-30 15:48:20');
+INSERT INTO `admin_operation_log` VALUES (1605, 1, 'admin/product_categorys/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 15:48:21', '2019-04-30 15:48:21');
+INSERT INTO `admin_operation_log` VALUES (1606, 1, 'admin/product_categorys', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 15:48:24', '2019-04-30 15:48:24');
+INSERT INTO `admin_operation_log` VALUES (1607, 1, 'admin/products', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 15:48:29', '2019-04-30 15:48:29');
+INSERT INTO `admin_operation_log` VALUES (1608, 1, 'admin/products/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-30 15:48:31', '2019-04-30 15:48:31');
+INSERT INTO `admin_operation_log` VALUES (1609, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:53:37', '2019-04-30 15:53:37');
+INSERT INTO `admin_operation_log` VALUES (1610, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:53:41', '2019-04-30 15:53:41');
+INSERT INTO `admin_operation_log` VALUES (1611, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:55:49', '2019-04-30 15:55:49');
+INSERT INTO `admin_operation_log` VALUES (1612, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 15:59:17', '2019-04-30 15:59:17');
+INSERT INTO `admin_operation_log` VALUES (1613, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 16:11:11', '2019-04-30 16:11:11');
+INSERT INTO `admin_operation_log` VALUES (1614, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 16:29:02', '2019-04-30 16:29:02');
+INSERT INTO `admin_operation_log` VALUES (1615, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 16:29:53', '2019-04-30 16:29:53');
+INSERT INTO `admin_operation_log` VALUES (1616, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 16:32:16', '2019-04-30 16:32:16');
+INSERT INTO `admin_operation_log` VALUES (1617, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 16:33:47', '2019-04-30 16:33:47');
+INSERT INTO `admin_operation_log` VALUES (1618, 1, 'admin/products/create', 'GET', '192.168.10.1', '[]', '2019-04-30 16:33:51', '2019-04-30 16:33:51');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -2812,8 +3057,8 @@ CREATE TABLE `product_categories`  (
 -- ----------------------------
 -- Records of product_categories
 -- ----------------------------
-INSERT INTO `product_categories` VALUES (1, '你好你', 'ni hao ni', 1, 1, '2019-04-29 15:40:23', '2019-04-29 18:17:27');
-INSERT INTO `product_categories` VALUES (4, '健身器材', NULL, 1, 0, '2019-04-29 16:06:49', '2019-04-29 16:06:49');
+INSERT INTO `product_categories` VALUES (1, '养生食材', 'yang sheng shi cai', 1, 1, '2019-04-29 15:40:23', '2019-04-30 10:10:17');
+INSERT INTO `product_categories` VALUES (4, '健身器材', 'jian shen qi cai', 1, 0, '2019-04-29 16:06:49', '2019-04-30 10:17:48');
 
 -- ----------------------------
 -- Table structure for products
