@@ -18,7 +18,8 @@ Route::group([
     //用户
     $router->resource('users', UserController::class);
     //产品信息
-    $router->resource('products', ProductController::class);    
+    $router->resource('products', ProductController::class);  
+ 
     //产品分类
     $router->resource('product_categorys',ProductCategoryController::class);  
 

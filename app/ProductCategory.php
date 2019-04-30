@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Overtrue\Pinyin\Pinyin;
 class ProductCategory extends Model
 {
-  	protected $fillable=['ping'];
+  	protected $fillable=['pinyin'];
+  	/*
   	public static function boot(){
   		parent::boot();
   		static::saving(function($model){
@@ -15,4 +16,15 @@ class ProductCategory extends Model
   			
   		});
   	}
+  	*/
+    
+  
+    static function product_categorys_options(){
+      $product_categorys=self::where('status',1)->get(['id', 'name']);
+      $options=array();
+      foreach ($product_categorys as $item) {
+          $options[$item->id]=$item->name;
+      }   
+      return $options; 
+    }
 }
