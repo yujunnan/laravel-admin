@@ -20,10 +20,13 @@ Route::group([
     $router->resource('users', UserController::class);
     //产品信息
     $router->resource('products', ProductController::class);  
- 
+    $router->post('products/create','ProductController@create');
+    $router->post('products/update','ProductController@update');   
+
     //产品分类
     $router->resource('product_categorys',ProductCategoryController::class);  
 
+    
 
 
 });

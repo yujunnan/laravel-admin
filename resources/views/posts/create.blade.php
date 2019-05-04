@@ -2,18 +2,18 @@
 @section('title', '| 查看文章')
 @section('headerCss')
 @parent 
-@show
+@endsection
 <!--头部--> 
 @section('header')
 @parent 
-@show
+@endsection
 <!--侧边栏-->
 @section('sidebar')
-@show
+@endsection
 <!--设置导航--> 
 @section('navigation')        
 @parent 
-@show
+@endsection
 <!--网站内容--> 
 @section('content')
     @parent
@@ -44,4 +44,4 @@
 @endsection
 @section('footerScripts')
 @parent 
-@show
+@endsection

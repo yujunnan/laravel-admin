@@ -10,15 +10,15 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     @section('headerCss')
     <!-- Styles -->
 
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     @show    
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     
 
@@ -145,7 +145,10 @@
 
 </body>
 </html>
-
+<script src="https://use.fontawesome.com/9712be8772.js"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--引入javascript--> 
 @section('footerScripts')
 <!-- Scripts -->
@@ -154,7 +157,5 @@
         'csrfToken' => csrf_token(),
     ]) !!};
 </script>
-<script src="https://use.fontawesome.com/9712be8772.js"></script>
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+
 @show 

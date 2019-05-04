@@ -1,5 +1,5 @@
-<form action="create" method="post" enctype="multipart/form-data">
-
+<form action="/admin/products/update" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{$id}}">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-info">
@@ -20,7 +20,7 @@
                 <div class='form-group  {!! !$errors->has("prices.$key.product_price") ? '' : 'has-error' !!} '>
                               
                     <label for="prices.$key.product_price" class="col-sm-2  control-label">
-                        {{ $item->name }}
+                        {{ $item->role->name }}
                       
                         
                     </label>
@@ -33,9 +33,9 @@
                         <div class="input-group">
                             <span class="input-group-addon">￥</span>
                             <input  style="width: 120px" type="text" id="prices[{{$key}}][product_price]" 
-                            name="prices[{{$key}}][product_price]" value='{{ old("prices.$key.product_price") }}' class="form-control prices[{{$key}}][product_price]" placeholder="输入 参考价" />
+                            name="prices[{{$key}}][product_price]" value="{{ $item->product_price }}" class="form-control prices[{{$key}}][product_price]" placeholder="输入 参考价" />
                             <input type="hidden" name="prices[{{$key}}][role_id]" 
-                            value="{{ $item->id }}">        
+                            value="{{ $item->role->id  }}">        
                         </div>
 
                         

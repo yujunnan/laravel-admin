@@ -6,8 +6,9 @@ class Role extends Model
 {
   	//获取角色
     static function role_options(){
-      $product_categorys=self::->get();
-      $options=array();  
+      $product_categorys=self::get();
+      
+      
       return $product_categorys; 
     }	
 

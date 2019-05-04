@@ -12,8 +12,8 @@
 */
 //Auth
 Auth::routes();
-//验证
-
+//手机号找回密码
+Route::get('phone/request', 'Auth\ResetPassword@phone_request')->name("phone.request");
 Auth::routes(['verify' => true]);
 
 
@@ -65,3 +65,5 @@ Route::post('movies/getmovies', 'MovieController@getmovies');
 Route::get('movies/getmovie', 'MovieController@getmovie');
 
 
+//发送短信
+Route::post('sms/upcode', 'SmsController@upcode');

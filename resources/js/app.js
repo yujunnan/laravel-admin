@@ -28,18 +28,19 @@ if (token) {
  */
 
 require('./bootstrap');
-
+require('jquery');
 
 import Vue from 'vue';
 import router from './routes.js';
 import store from './store.js';
 //默认组件
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-//附件上传组件
-Vue.component('fileupload-component', require('./components/global/FileUploadComponent.vue').default);
 //图片上传组件
 Vue.component('imagesupload-component', require('./components/global/ImagesUploadComponent.vue').default);
-new Vue({
+//短信
+Vue.component('sms-component', require('./components/global/SmsComponent.vue').default);
+//发送短信
+const app = new Vue({
     router,
     store
 }).$mount('#app');

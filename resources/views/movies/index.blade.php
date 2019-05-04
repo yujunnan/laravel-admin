@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('headerCss')
 @parent
-@show   
+@endsection   
 @section('content')
             <router-view></router-view>
 

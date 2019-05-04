@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\Redis;
 class RegisterController extends Controller
 {
     /*
@@ -48,10 +48,30 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $data['code_confirmation']=Redis::get('code');  
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required', 'regex:/^1[34578][0-9]{9}$/', 'unique:users'],
+            'code'=> ['required', 'confirmed'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            'name.required'=>'姓名必填',
+            'name.string'=>'姓名必选是字符串',
+            'name.max'=>'姓名最大255个字符',
+            'email.required'=> '邮箱必填',
+            'email.email'=>'邮箱格式错误',
+            'email.max'=>'邮箱最大255个字符',
+            'email.unique'=>'邮箱已绑定',
+            'phone.required'=> '手机号必填',
+            'phone.regex'=>'手机号格式错误',
+            'phone.unique'=>'手机号已存在',
+            'code.required'=>'请输入手机号',
+            'code.confirmed'=>'两次输入验证码不一致',
+            'password.required'=>'密码必填',
+            'password.string'=>'密码必须是字符串',
+            'password.min'=>'密码长度须大于8',
+            'password.confirmed'=>'两次密码不一致',            
         ]);
     }
 
@@ -65,6 +85,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'phone'=> $data['phone'],
             'email' => $data['email'],
             'password' => $data['password'],
         ]);

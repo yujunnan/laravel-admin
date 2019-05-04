@@ -19,7 +19,8 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-
+    // 支持的登录字段
+    protected $supportFields = ['phone', 'email'];
     /**
      * Where to redirect users after login.
      *
@@ -144,6 +145,19 @@ public function implicitCallback(Request $request)
     dd($request->get('access_token'));
 }
 */
+
+
+// 将支持的登录字段都传递到 UserProvider 进行查询
+public function credentials(Request $request)
+{
+    $credentials = $request->only($this->username(), 'password');
+    foreach ($this->supportFields as $field) {
+        if (empty($credentials[$field])) {
+            $credentials[$field] = $credentials[$this->username()];
+        }
+    }
+    return $credentials;
+}
 
 
 
