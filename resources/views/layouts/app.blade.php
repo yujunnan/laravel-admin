@@ -13,10 +13,11 @@
 
     @section('headerCss')
     <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     @show    
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -30,88 +31,82 @@
         <!--头部--> 
         @section('header')
         @show
-
         <!--侧边栏-->
         @section('sidebar')
         @show 
-
         <!--设置导航--> 
-        @section('navigation')        
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+        @section('navigation')
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+              <a class="navbar-brand" href="{{ url('/') }}"> {{ config('app.name', '我的部落') }}</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('/') }}">首页 <span class="sr-only">(current)</span></a>
+                  </li>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', '我的部落') }}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      新闻
                     </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- 导航条左边 -->
-                    <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">首页</a></li>
-                        <!--<li><a href="{{ url('posts') }}">文章</a></li>-->
-                        <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                   新闻<span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('posts') }}">
-                                            新闻
-                                        </a>
-                                    @if (!Auth::guest())
-                                    <li><a href="{{ route('posts.create') }}">发布新闻</a></li>
-                                    @endif
-                                    </li>
-                                </ul>
-                        </li>                       
-                        <li><a href="{{ url('movies') }}#movies">电影</a></li>
-
-                    </ul>
-
-                    <!-- 导航条右边 -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- 登录注册链接 -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">登录</a></li>
-                            <li><a href="{{ route('register') }}">注册</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        @role('Admin') {{-- Laravel-permission blade 辅助函数 --}}
-                                        <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
-                                        @endrole
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            退出
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ url('posts') }}">新闻</a>
+                        @if (!Auth::guest())
+                            <a class="dropdown-item" href="{{ route('posts.create') }}">发布新闻</a>
                         @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url('movies') }}#movies">电影</a>
+                  </li>
+                </ul>
+
+                <ul class="navbar-nav navbar-right">
+                    @if (Auth::guest())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">登录</a>
+                       
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">注册</a>
+                       
+                    </li>
+                    @else
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        @role('Admin') {{-- Laravel-permission blade 辅助函数 --}}
+                            <a class="dropdown-item" href="{{ url('posts') }}"><i class="fa fa-btn fa-unlock"></i>Admin</a>
+                        @endrole
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            退出
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                             {{ csrf_field() }}
+                        </form>
+
+                    </div>
+                    </li>   
+                    @endif                 
+                </ul>
+                <!--
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                -->
+              </div>
+            </nav>
+
+
+     
         @show
         <!--主体-->
         @section('content')
@@ -146,9 +141,11 @@
 </body>
 </html>
 <script src="https://use.fontawesome.com/9712be8772.js"></script>
+
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!--引入javascript--> 
 @section('footerScripts')
 <!-- Scripts -->

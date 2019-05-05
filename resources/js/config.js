@@ -5,7 +5,7 @@ var api_url = '';
 
 switch( process.env.NODE_ENV ){
     case 'development':
-        api_url = 'http://app.test/';
+        api_url = 'http://hongyige.test/';
         break;
     case 'production':
         api_url = 'http://app.demo.laravelacademy.org/api/v1';
